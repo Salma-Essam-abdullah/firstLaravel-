@@ -13,7 +13,8 @@
 
 //
 //
-//Route::get('/','Front\FirstController@index');
+
+
 
 Route::get('/', 'Front\FirstController@index2');
 
@@ -55,9 +56,7 @@ Route::group(['prefix'=>'users' , 'middleware' => 'auth' ,'namespace' => 'Front'
     Route::get('edit','UserController@showname');
     Route::put('update','UserController@showname');
 });
-Route::fallback(function () {
-    return 'fall';
-});
+
 
 
 Route::get('adminsec','Admin\AdminController@showString' );
@@ -89,3 +88,34 @@ Route::get('landing',function (){
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
+
+Route::get('redirect/{service}' , 'SocialController@redirect');
+
+
+
+Route::get('callback/{service}' , 'SocialController@callback');
+
+
+Route::get('fillable','CrudController@getOffers');
+
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
+    Route::group(['prefix' => 'offers'], function () {
+
+        Route::get('create', 'CrudController@create');
+
+        Route::post('store', 'CrudController@store')->name('offers.store');
+    });
+
+
+});
+
+//Route::group(['prefix'=>'offers'],function () {
+//  //  Route::get('store', 'CrudController@store');
+//  Route::group(['prefix'=>LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],function(){
+//    Route::get('create','CrudController@create');
+//  });
+//
+//
+//});
+Route::get('create','CrudController@create');

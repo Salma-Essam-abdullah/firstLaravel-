@@ -2,6 +2,11 @@
 
 return [
     'hello' => 'مرحبا',
-    'welcome' => 'اهلا'
-
+    'welcome' => 'اهلا',
+    'offer name required' => 'اسم العرض مطلوب',
+    'offer name max' => 'اسم العرض لا يمكن ان يزيد عن 100 حرف',
+    'offer name unique'=>'اسم العرض موجود مسبقا',
+    'price required' => 'السعر مطلوب',
+    'price numeric' => 'السعر يجب ان يكون رقم',
+    'details required' => 'التفاصيل مطلوبة',
 ];
