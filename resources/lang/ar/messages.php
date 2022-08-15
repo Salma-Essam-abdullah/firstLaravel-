@@ -9,4 +9,9 @@ return [
     'price required' => 'السعر مطلوب',
     'price numeric' => 'السعر يجب ان يكون رقم',
     'details required' => 'التفاصيل مطلوبة',
+    'create new offer' => 'اضف عرض جديد',
+    'Offer Name' => 'اسم العرض',
+    'Offer Price' => 'السعر',
+    'Offer Details' => 'التفاصيل',
+    'Add Offer' => 'اضف عرض',
 ];

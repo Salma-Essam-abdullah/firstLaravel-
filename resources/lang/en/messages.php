@@ -9,4 +9,9 @@ return [
     'price required' => 'price required',
     'price numeric' => 'price numeric',
     'details required' => 'details required',
+    'create new offer' => 'Create new offer',
+    'Offer Name' => 'Offer Name',
+    'Offer Price' => 'Offer Price',
+    'Offer Details' => 'Offer Details',
+    'Add Offer' => 'Add Offer',
 ];

@@ -88,7 +88,7 @@
             </div>
           </nav>
         <div class="container">
-       <h1>Create new offer</h1>
+   <h1> {{__('messages.create new offer')}}</h1>
        @if(Session::has('success'))
        <div class="alert alert-success" role="alert">
         {{Session::get('success')}}
@@ -100,7 +100,7 @@
             @csrf
 
             <div class="mb-3">
-              <label for="name" class="form-label">Offer Name</label>
+              <label for="name" class="form-label">{{__('messages.Offer Name')}}</label>
               <input type="text" class="form-control" id="name"  name="name" >
               @error('name')
                 <small class="form-text text-danger">{{ $message }}
@@ -109,7 +109,7 @@
 
 
             <div class="mb-3">
-                <label for="price" class="form-label">Offer Price</label>
+                <label for="price" class="form-label">{{__('messages.Offer Price')}}</label>
                 <input type="number" class="form-control" id="price"  name="price" >
                 @error('price')
                 <small class="form-text text-danger">{{ $message }}
@@ -118,7 +118,7 @@
 
 
             <div class="mb-3">
-                <label for="details" class="form-label">Offer Details</label>
+                <label for="details" class="form-label">{{__('messages.Offer Details')}}</label>
                 <input type="text" class="form-control" id="details"  name="details" >
                 @error('details')
                 <small class="form-text text-danger">{{ $message }}
@@ -128,7 +128,7 @@
 
 
 
-            <button type="submit" class="btn btn-primary">Add Offer</button>
+            <button type="submit" class="btn btn-primary">{{__('messages.Add Offer')}}</button>
           </form>
 
         </div>
