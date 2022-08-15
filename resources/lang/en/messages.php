@@ -10,11 +10,11 @@ return [
     'price numeric' => 'price numeric',
     'details required' => 'details required',
     'create new offer' => 'Create new offer',
-    'Offer Name en' => 'Offer Name in english',
-    'Offer Name ar' => 'Offer Name in arabic',
+    'Offer Name' => 'Offer Name',
+   
     'Offer Price' => 'Offer Price',
-    'Offer Details en' => 'Offer Details in english',
-    'Offer Details ar' => 'Offer Details in arabic',
+    'Offer Details' => 'Offer Details',
+   
     'Offer ID' => 'Offer ID',
     'Add Offer' => 'Add Offer',
     'Offer created successfully'=> 'Offer created successfully',

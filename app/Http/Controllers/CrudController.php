@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\OfferRequest;
 use App\Models\Offer;
-
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class CrudController extends Controller
 {
@@ -37,7 +37,13 @@ public function create(){
 }
 
 public function index(){
-  $offers = Offer::select('id','name_ar','name_en','price','details_ar','details_en')->get();
+    $offers = Offer::select('id',
+    'name_'.LaravelLocalization::getCurrentLocale().' as name',
+    'price',
+    'details_'.LaravelLocalization::getCurrentLocale().' as details'
+    )->get();
+
+    return view('Offers.index',compact('offers'));
    return view('Offers.index',compact('offers'));
 }
 
