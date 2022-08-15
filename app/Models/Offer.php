@@ -8,9 +8,12 @@ class Offer extends Model
 {
      protected $table = "offers";
      protected $fillable=[
-         'name',
+         'name_ar',
+         'name_en',
          'price',
-         'details'
+         'details_ar',
+         'details_en',
+         
      ];
      protected $hidden=[
          'created_at',

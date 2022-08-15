@@ -100,12 +100,19 @@
             @csrf
 
             <div class="mb-3">
-              <label for="name" class="form-label">{{__('messages.Offer Name')}}</label>
-              <input type="text" class="form-control" id="name"  name="name" >
-              @error('name')
+              <label for="name" class="form-label">{{__('messages.Offer Name ar')}}</label>
+              <input type="text" class="form-control" id="name"  name="name_ar" >
+              @error('name_ar')
                 <small class="form-text text-danger">{{ $message }}
              @enderror
             </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">{{__('messages.Offer Name en')}}</label>
+                <input type="text" class="form-control" id="name"  name="name_en" >
+                @error('name_en')
+                  <small class="form-text text-danger">{{ $message }}
+               @enderror
+              </div>
 
 
             <div class="mb-3">
@@ -118,9 +125,17 @@
 
 
             <div class="mb-3">
-                <label for="details" class="form-label">{{__('messages.Offer Details')}}</label>
-                <input type="text" class="form-control" id="details"  name="details" >
-                @error('details')
+                <label for="details" class="form-label">{{__('messages.Offer Details ar')}}</label>
+                <input type="text" class="form-control" id="details"  name="details_ar" >
+                @error('details_ar')
+                <small class="form-text text-danger">{{ $message }}
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="details" class="form-label">{{__('messages.Offer Details en')}}</label>
+                <input type="text" class="form-control" id="details"  name="details_en" >
+                @error('details_en')
                 <small class="form-text text-danger">{{ $message }}
                 @enderror
             </div>
