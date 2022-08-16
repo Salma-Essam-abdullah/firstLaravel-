@@ -13,6 +13,7 @@ class Offer extends Model
          'price',
          'details_ar',
          'details_en',
+         'photo',
          
      ];
      protected $hidden=[

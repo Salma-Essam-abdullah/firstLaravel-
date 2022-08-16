@@ -87,15 +87,25 @@
         </div>
       </nav>
         <div class="container">
-            <h1>Offers</h1>
-
+            <h1>Offers
+              <br/>
+            <a  href="{{route('offers.create')}}" type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+              {{ __('messages.Add Offer') }}
+            </a></h1>
 <table class="table table-dark table-striped">
+  @if(Session::has('success'))
+  <div class="alert alert-success" role="alert">
+   {{Session::get('success')}}
+  </div>
+    @endif
+  
     <thead>
       <tr>
         <th scope="col">{{__('messages.Offer ID')}}</th>
         <th scope="col">{{__('messages.Offer Name')}}</th>
         <th scope="col">{{__('messages.Offer Price')}}</th>
         <th scope="col">{{__('messages.Offer Details')}}</th>
+        <th scope="col">{{__('messages.actions')}}</th>
       </tr>
     </thead>
     <tbody>
@@ -106,6 +116,7 @@
         <td>{{$offer->name}}</td>
         <td>{{$offer->price}}</td>
         <td>{{$offer->details}}</td>
+        <td><a href="{{route('offers.edit', $offer->id)}}" class="btn btn-primary">{{__('messages.edit')}}</a></td>
         </tr>
         @endforeach
     </tbody>

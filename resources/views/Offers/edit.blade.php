@@ -88,27 +88,23 @@
             </div>
           </nav>
         <div class="container">
-   <h1> {{__('messages.create new offer')}}</h1>
-       @if(Session::has('success'))
-       <div class="alert alert-success" role="alert">
-        {{Session::get('success')}}
-       </div>
-         @endif
+   <h1> {{__('messages.Update Offer')}}</h1>
+      
 
 
-        <form method="POST" action="{{route('offers.store')}}" enctype="multipart/form-data">
+        <form method="POST" action="{{route('offers.update',$offer->id)}}">
+            @method('PUT')
             @csrf
-
             <div class="mb-3">
               <label for="name" class="form-label">{{__('messages.Offer Name').' ar'}}</label>
-              <input type="text" class="form-control" id="name"  name="name_ar" >
+              <input type="text" class="form-control" id="name"  name="name_ar" value="{{$offer->name_ar}}">
               @error('name_ar')
                 <small class="form-text text-danger">{{ $message }}
              @enderror
             </div>
             <div class="mb-3">
                 <label for="name" class="form-label">{{__('messages.Offer Name' ).' en'}}</label>
-                <input type="text" class="form-control" id="name"  name="name_en" >
+                <input type="text" class="form-control" id="name"  name="name_en"  value="{{$offer->name_en}}">
                 @error('name_en')
                   <small class="form-text text-danger">{{ $message }}
                @enderror
@@ -117,7 +113,7 @@
 
             <div class="mb-3">
                 <label for="price" class="form-label">{{__('messages.Offer Price')}}</label>
-                <input type="number" class="form-control" id="price"  name="price" >
+                <input type="number" class="form-control" id="price"  name="price" value="{{$offer->price}}">
                 @error('price')
                 <small class="form-text text-danger">{{ $message }}
                  @enderror
@@ -126,7 +122,7 @@
 
             <div class="mb-3">
                 <label for="details" class="form-label">{{__('messages.Offer Details') .' ar'}}</label>
-                <input type="text" class="form-control" id="details"  name="details_ar" >
+                <input type="text" class="form-control" id="details"  name="details_ar"  value="{{$offer->details_ar}}" >
                 @error('details_ar')
                 <small class="form-text text-danger">{{ $message }}
                 @enderror
@@ -134,20 +130,12 @@
 
             <div class="mb-3">
                 <label for="details" class="form-label">{{__('messages.Offer Details' ).' en'}}</label>
-                <input type="text" class="form-control" id="details"  name="details_en" >
+                <input type="text" class="form-control" id="details"  name="details_en"  value="{{$offer->details_en}}">
                 @error('details_en')
                 <small class="form-text text-danger">{{ $message }}
                 @enderror
             </div>
-
-
-            <div class="mb-3">
-                <label for="photo" class="form-label">{{__('messages.add image' )}}</label>
-                <input type="file" class="form-control" id="photo"  name="photo" >
-              
-            </div>
-
-            <button type="submit" class="btn btn-primary">{{__('messages.Add Offer')}}</button>
+            <button type="submit" class="btn btn-primary">{{__('messages.Update Offer')}}</button>
           </form>
 
         </div>

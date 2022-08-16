@@ -18,4 +18,10 @@ return [
     'Offer ID' => 'رقم العرض',
     'Add Offer' => 'اضف عرض',
     'Offer created successfully'=> 'تم اضافة العرض بنجاح',
+    'edit' => 'تعديل',
+    'actions'=>'الاجراءات',
+    'Update Offer'=>'تعديل العرض',
+    'Offer updated successfully'=>'تم تعديل العرض بنجاح',
+    'Add Offer'=>'اضف عرض',
+    'add image'=>'اضف صورة', 
 ];

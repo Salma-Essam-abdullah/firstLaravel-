@@ -18,4 +18,10 @@ return [
     'Offer ID' => 'Offer ID',
     'Add Offer' => 'Add Offer',
     'Offer created successfully'=> 'Offer created successfully',
+    'edit' => 'edit',
+    'actions'=>'actions',
+    'Update Offer'=>'Update Offer',
+    'Offer updated successfully'=>'Offer updated successfully',
+    'Add Offer'=>'Add Offer',
+    'add image'=>'Add Image',
 ];
