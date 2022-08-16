@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\VideoViewer;
 use App\Http\Requests\OfferRequest;
 use App\Models\Offer;
+use App\Models\Video;
 use App\Traits\OfferTrait;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -45,7 +47,8 @@ public function index(){
     $offers = Offer::select('id',
     'name_'.LaravelLocalization::getCurrentLocale().' as name',
     'price',
-    'details_'.LaravelLocalization::getCurrentLocale().' as details'
+    'details_'.LaravelLocalization::getCurrentLocale().' as details',
+    'photo'
     )->get();
 
 ;
@@ -72,5 +75,22 @@ public function update(OfferRequest $request , $id){
    
 }
 
+public function getVideo(){
+  
+    
+   $video =  Video::first();
+   event(new VideoViewer($video));
+    return view('video')->with('video',$video);
+}
+
+public function destroy($id){
+    $offer = Offer::find($id);
+    if(!$offer){
+        return redirect()->route('offers.index')->with('error', __('messages.Offer not found'));    
+    }
+    $offer->delete();
+    return redirect()->route('offers.index')->with('success', __('messages.Offer deleted successfully'));
+
+}
 }
 

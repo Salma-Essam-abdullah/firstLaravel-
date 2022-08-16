@@ -87,7 +87,9 @@
         </div>
       </nav>
         <div class="container">
-            <h1>Offers
+            <h1>{{
+              
+                __('messages.offers')}}
               <br/>
             <a  href="{{route('offers.create')}}" type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
               {{ __('messages.Add Offer') }}
@@ -97,6 +99,7 @@
   <div class="alert alert-success" role="alert">
    {{Session::get('success')}}
   </div>
+  
     @endif
   
     <thead>
@@ -105,6 +108,7 @@
         <th scope="col">{{__('messages.Offer Name')}}</th>
         <th scope="col">{{__('messages.Offer Price')}}</th>
         <th scope="col">{{__('messages.Offer Details')}}</th>
+        <th scope="col">{{__('messages.Offer Image')}}</th>
         <th scope="col">{{__('messages.actions')}}</th>
       </tr>
     </thead>
@@ -116,7 +120,23 @@
         <td>{{$offer->name}}</td>
         <td>{{$offer->price}}</td>
         <td>{{$offer->details}}</td>
-        <td><a href="{{route('offers.edit', $offer->id)}}" class="btn btn-primary">{{__('messages.edit')}}</a></td>
+     
+        <td><img src="{{asset('images/offers/'.$offer->photo)}}" alt="{{$offer->name}}" width="200px" height="200px"></td>
+        <td>
+          
+            
+              <a href="{{route('offers.edit',$offer->id)}}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                {{ __('messages.edit') }}
+              </a>
+         
+              <form action="{{route('offers.destroy',$offer->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">{{ __('messages.delete') }}</button>
+              </form>
+           
+        
+        </td>
         </tr>
         @endforeach
     </tbody>

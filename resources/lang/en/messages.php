@@ -24,4 +24,9 @@ return [
     'Offer updated successfully'=>'Offer updated successfully',
     'Add Offer'=>'Add Offer',
     'add image'=>'Add Image',
+    'Offer Image'=>'Offer Image',
+    'delete' => 'delete',
+    'offers'=>'Offers',
+    'Offer deleted successfully'=>'Offer deleted successfully',
+    'Offer not found' => 'Offer not found',
 ];

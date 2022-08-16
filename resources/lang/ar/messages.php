@@ -24,4 +24,9 @@ return [
     'Offer updated successfully'=>'تم تعديل العرض بنجاح',
     'Add Offer'=>'اضف عرض',
     'add image'=>'اضف صورة', 
+    'Offer Image'=>'صورة العرض',
+    'delete' => 'حذف',
+    'offers'=>'العروض',
+    'Offer deleted successfully'=>'تم حذف العرض بنجاح',
+    'Offer not found' => 'العرض غير موجود',
 ];
